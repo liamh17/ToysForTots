@@ -20,13 +20,13 @@
 #define Head 8
 
 //Function Declarations
-     void SetMotorSpeed(void);                 //Adjusts the speed at which limbs will move
+     void SetMotorSpeed(void);
      void startingPos(void);
      void squeezePres(void);
      void liftPres(void);
- int speed = 5;                               //sets the speed at which servos will turn
+ int speed = 5; //sets the speed at which servos will turn
   
-int main()                                    // Main function
+int main() // Main function
 {
    startingPos();
    SetMotorSpeed();
@@ -36,7 +36,7 @@ int main()                                    // Main function
    liftPres();
 }
 
-void startingPos()
+void startingPos() //Sets the robot to a starting position before the initial movement
 {
   servo_angle(LeftRotator, 0);
   servo_angle(LeftShoulder, 180);
@@ -46,7 +46,7 @@ void startingPos()
   servo_angle(RightElbow, 0);
 }
 
-void squeezePres()
+void squeezePres() //Brings the robot to a position able to squeeze the present, then squeezes it 
 {
   servo_angle(LeftRotator, 1200);
   servo_angle(LeftShoulder, 530);
@@ -56,7 +56,7 @@ void squeezePres()
   servo_angle(RightElbow, 0);
 }
 
-void liftPres()
+void liftPres() //Rotate the shoulders to a position that hands the marine the present
 {
   servo_angle(LeftRotator, 1300);
   servo_angle(LeftShoulder, 1700);
@@ -66,7 +66,7 @@ void liftPres()
   servo_angle(RightElbow, 0);
 }
 
-void SetMotorSpeed(void)
+void SetMotorSpeed(void) //Sets the speed of the motors
 {
    
    servo_setramp(LeftHip,speed);
